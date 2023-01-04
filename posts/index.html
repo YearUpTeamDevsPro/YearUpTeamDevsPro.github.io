@@ -1,42 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="/global.css" />
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="posts.css">
+    <link rel="stylesheet" href="posts.css" />
 
     <title>/POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script src="/auth.js"></script>
+    <!-- <script src="/auth.js"></script>
     <script>
-        if (isLoggedIn() === false) window.location.replace("/");
-    </script>
-</head>
-<body>
+      if (isLoggedIn() === false) window.location.replace("/");
+    </script> -->
+  </head>
+  <body>
+    <header></header>
+    <nav class="navbar navbar-expand">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="">Logo</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto navEdit mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">About</a></li>
+                <li><a class="dropdown-item" href="#">LogOut </a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <header>
-        <h1>POSTS PAGE</h1>
-    </header>
+    <main class="mt-4">
+      <!-- <div class="miniprofile">
+        <img
+          class="benjaTheme"
+          src="images/benjamin-voros-wITd9_eDTw8-unsplash.jpg"
+          alt=""
+        />
+        <div>
+          <img
+            class="miniProfile-Pic"
+            src="images/Screenshot 2020-09-17 081807 - Copy.jpg"
+            alt="profilepic"
+          />
+        </div>
+        <h2>kehinde ojo</h2>
+        <p></p>
+        <div class="PeopleCount">
+          <div>
+            <p>5</p>
+            <p>backer</p>
+          </div>
+          <div>
+            <p>1</p>
+            <p>following</p>
+          </div>
+        </div>
+        <hr />
+        <button>Edit Profile</button>
+      </div> -->
+      <div class="main-content">
+        <div class="NewPost">
+          <a
+            id="mainContentBtn"
+            class="mainContentBtn"
+            href="/profile/profile.html"
+            >NEW POST
+          </a>
+        </div>
+        <div class="">
+          <div class="card text-bg-light mb-3 postedcontent">
+            <div id=" card-body MainContent">
+              <h5 id="headingContent">My Time In austrailaia</h5>
+              <p id="contentArea">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+                minus adipisci quos placeat, dolorum sequi, culpa magni at a
+                fugit dolorem assumenda perferendis fugiat sapiente tempore
+                voluptatem natus inventore corporis. Nulla aut atque, nam eum
+                vel dolores non quam porro quis officia, architecto, error
+                debitis unde corrupti eius ratione necessitatibus et excepturi?
+                Quaerat aperiam tempora natus quibusdam delectus ex odit.
+                Architecto dignissimos repellendus, harum sit, molestiae
+                possimus placeat aspernatur fugit aliquid delectus voluptatum.
+                Distinctio, sint est! Accusantium quasi magnam, hic corrupti,
+                dolore impedit id nostrum quam iusto expedita quod non. Esse,
+                placeat! Ut voluptate, dolorum consequatur beatae ea numquam
+                voluptas, nihil obcaecati ipsa quia molestiae fuga ipsum
+                provident similique minus blanditiis odit veniam dolore soluta
+                suscipit unde aliquid. Beatae, adipisci. Id nihil dicta
+                voluptatibus quod, sit officiis qui aut maxime nisi quis nulla,
+                asperiores recusandae corporis consectetur laboriosam beatae
+                dignissimos earum accusantium? Nam eos consequatur, ipsum velit
+                perspiciatis cumque possimus.
+              </p>
 
-    <main></main>
+              <div class="otherp">
+                <p id="author ">kehinde ojo</p>
+                <p id="timeStamp">11:88</p>
+                <p id="likedbutton"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="news">
+        <h4>Recent news</h4>
+        <ul>
+          <li>
+            <a href=""
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </a>
+          </li>
+        </ul>
+      </div>
+    </main>
 
     <footer></footer>
-
-
     <!-- Bootstrap Bundle (including Popper for popovers) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Page-specific code -->
     <script src="posts.js"></script>
-</body>
+  </body>
 </html>
