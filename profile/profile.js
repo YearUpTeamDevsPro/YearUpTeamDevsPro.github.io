@@ -7,8 +7,13 @@ const input1 = document.getElementById("input1");
 const textArea1 = document.getElementById("textArea1");
 const logoutBtn = document.getElementById("logoutBtn");
 
+
+
+
 window.onload = () =>{
     isLoggedIn();
+
+    document.getElementById("userName").innerText = (isLoggedIn()).username;
 
     document.getElementById("addPost").style.display = "none";
 
@@ -16,23 +21,34 @@ window.onload = () =>{
     document.getElementById("addPost").style.display = "block";
     }
 
-    addPost.onsubmit = (submit) =>{
-
-    }
+  
 
         // let input1 = document.getElementById("input1").value;
-        let textArea1 = document.getElementById("textArea1").value;
+ 
 
+        logoutBtn.onclick = () =>{
+            logout();
+        }
+    
+
+
+
+}
+
+
+addPost.onsubmit = (submit) =>{
+
+    let textArea1 = document.getElementById("textArea1").value;
+    console.log(JSON.stringify({ text: textArea1}));
         fetch('https://microbloglite.herokuapp.com/api/posts', {
             method: 'POST',
             headers: {
                 'Accept' : 'application/json, text/plain, */*',
                 'content-type': 'application/json',
-                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0cmluZyIsImlhdCI6MTY3Mjg0NDExMSwiZXhwIjoxNjcyOTMwNTExfQ.8Rx3gqwG02QsGWIggYU8FFvaKDcfMLdWgYFGmlKbZuA',
-                
+                'Authorization': `Bearer ${(getLoginData()).token}`
                
              },
-            body: JSON.stringify({ text: textArea1})
+                    body: JSON.stringify({ text: textArea1})
           
 
 
@@ -42,12 +58,6 @@ window.onload = () =>{
 
             console.log(data);
         })
-
-        logoutBtn.onclick = () =>{
-            logout();
-        }
-    
-
 
 
 }
