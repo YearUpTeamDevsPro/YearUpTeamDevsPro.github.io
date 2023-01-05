@@ -1,29 +1,30 @@
-/* Posts Page JavaScript */
-
-"use strict";
 window.onload = function () {
-  getAllpost();
-  onClickedlikesBtn;
-
-  let Logoutbtn = document.getElementById("Logoutbtn");
-  Logoutbtn.onclick = function () {
-    logout();
-  };
+  onClickedlikesBtn();
+  userposts();
 };
-function getAllpost() {
-  let headingContent = document.getElementById("headingContent");
-  let contentArea = document.getElementById("contentArea");
-  let author = document.getElementById("author");
-  let timeStamp = document.getElementById("timeStamp");
-  fetch("https://microbloglite.herokuapp.com/api/post")
-    .then((res) => res.json())
-    .then((data) => {
-      headingContent.innerHTML = data._id;
-      contentArea.innerHTML = data.text;
-      author.innerHTML = data.username;
-      timeStamp.innerHTML = data.createdAt;
-    });
+
+function getusername() {
+  let loginuser = getLoginData();
+  return loginuser.username;
 }
+let title = document.getElementById("title");
+let contentArea = document.getElementById("contentArea");
+let author = document.getElementById("author");
+let timestamp = document.getElementById("timestamp");
+let timestamp = document.getElementById("timestamp");
+fetch(api + "/api/post")
+  .then((res) => res.json())
+  .then((data) => {
+    for (let datas of data) {
+      if ((loginuser = datas.username)) {
+        title.innerhtml =
+          contentArea.innerhtml =
+          author.innerhtml =
+          timestamp.innerhtml =
+            data;
+      }
+    }
+  });
 
 function onClickedlikesBtn() {
   const likedbtn = document.getElementById("likedbtn");
