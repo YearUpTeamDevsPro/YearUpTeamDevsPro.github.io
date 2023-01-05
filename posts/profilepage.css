@@ -44,8 +44,7 @@ main {
   padding-left: 2rem;
   padding-top: 0.5rem;
 }
-.contentposted h5 {
-}
+
 .otherp {
   display: flex;
   justify-content: space-around;
@@ -71,9 +70,10 @@ main {
   margin-left: 1rem;
 }
 .likes input {
+  margin-left: 1rem;
   border: none;
-  width: 1rem;
-  background: none;
+  width: 3rem;
+
   pointer-events: none;
   color: black;
 }
