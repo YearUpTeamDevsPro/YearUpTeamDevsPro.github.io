@@ -33,6 +33,8 @@ main {
 
   background-color: rgba(173, 216, 230, 0.644);
   height: 50rem;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 .NewPost {
   float: right;
@@ -77,11 +79,12 @@ main {
   padding-left: 9px;
   padding-top: 10px;
 }
-.likeDislike {
+.likesdiv {
   display: flex;
 }
-.likeDislike div button {
-  background-color: whitesmoke;
+.likesdiv div button {
+  background-color: none;
+  background: none;
   padding: 0%;
   border: none;
 }
