@@ -19,7 +19,7 @@ function getAllpost() {
       Authorization: `Bearer ${loginuser.token}`,
     },
 };
-  fetch("https://microbloglite.herokuapp.com/api/posts",options)
+  fetch("https://microbloglite.herokuapp.com/api/posts?limit=1000&offset=0",options)
 
     .then((res) => res.json())
     .then((data) => {
