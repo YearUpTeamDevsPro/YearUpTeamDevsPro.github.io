@@ -99,3 +99,7 @@ main {
   pointer-events: none;
   color: black;
 }
+.logoimg{
+  width: 7rem;
+  height: 7rem;
+}
