@@ -6,23 +6,24 @@ const addPost = document.getElementById("addPost");
 const input1 = document.getElementById("input1");
 const textArea1 = document.getElementById("textArea1");
 const logoutBtn = document.getElementById("logoutBtn");
+
 const PostOutput = document.getElementById("PostOutput");
 
 
 
 
 
-window.onload = () =>{
-    isLoggedIn();
-    // document.getElementById("userName").innerText = (isLoggedIn()).username;
 
-    // function isLoggedIn() {
-    //     return {
-    //       username: 'DevsPro'
-    //     }
-    //   }
-      
-    //   document.getElementById("userName").innerText = (isLoggedIn()).username;
+window.onload = () =>{
+    let username = getLoginData().username;
+    console.log(username);
+
+    document.getElementById("userName").innerHTML = username;
+
+    userProfileName();
+
+    isLoggedIn();
+
 
     function isLoggedIn() {
         return {
@@ -34,6 +35,7 @@ window.onload = () =>{
       document.getElementById("userName").innerText = username;
       
       
+
 
     document.getElementById("addPost").style.display = "none";
 
@@ -90,4 +92,8 @@ addPost.onsubmit = (submit) =>{
   
 
 
+}
+function userProfileName(){
+    let userName = document.getElementById("userName");
+    // userName.innerHTML = username;
 }

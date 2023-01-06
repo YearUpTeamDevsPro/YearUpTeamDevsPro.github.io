@@ -22,10 +22,10 @@
     <title>/POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <!-- <script src="/auth.js"></script>
+    <script src="/auth.js"></script>
     <script>
       if (isLoggedIn() === false) window.location.replace("../landing/");
-    </script> -->
+    </script>
   </head>
   <body>
     <header></header>
@@ -81,24 +81,25 @@
     </nav>
 
     <main class="mt-4">
-      <div class="main-content">
+      <div id="main-content" class="main-content">
         <div class="NewPost">
+
           <a id="mainContentBtn" class="mainContentBtn" href="/profile/profile.html"
+
             >NEW POST
           </a>
         </div>
 
-        <div class="card postedcontent">
+        <!-- <div class="card postedcontent">
           <div class="Maincontent card-body">
-            <h1 class="headingcontent">title</h1>
-            <p class="contentArea card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+            <h1 id="headingcontent" class="headingcontent"></h1>
+            <p id="contentArea"class="contentArea card-text">
+             
             </p>
             <div class="otherp">
               <p>By: <span id="author "></span></p>
               <p>Created: <span id="timeStamp"></span></p>
-              <div class="likeDislike">
+              <div class="likesdiv">
                 <div class="likes">
                   <button id="likedbtn">
                     <i class="fa-regular fa-thumbs-up"> </i>
@@ -115,7 +116,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="news">
         <h4>Recent news</h4>
