@@ -8,6 +8,7 @@ const textArea1 = document.getElementById("textArea1");
 const logoutBtn = document.getElementById("logoutBtn");
 
 const PostOutput = document.getElementById("PostOutput");
+const userName = document.getElementById("userName");
 
 
 
@@ -15,10 +16,12 @@ const PostOutput = document.getElementById("PostOutput");
 
 
 window.onload = () =>{
-    let username = getLoginData().username;
-    console.log(username);
+    document.getElementById("addPost").style.display = "none";
 
-    document.getElementById("userName").innerHTML = username;
+    let userName = getLoginData().username;
+    console.log( userName);
+
+    // document.getElementById("userName").innerHTML = username;
 
     userProfileName();
 
@@ -37,9 +40,9 @@ window.onload = () =>{
       
 
 
-    document.getElementById("addPost").style.display = "none";
+    
 
-    postId.onclick = () =>{
+      postId.onclick = () =>{
     document.getElementById("addPost").style.display = "block";
     }
 
