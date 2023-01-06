@@ -59,6 +59,19 @@ main {
   border-radius: 1rem;
   flex: 1;
   color: orange;
+  height: 12rem;
+  overflow: scroll;
+  overflow-x: hidden;
+
+}
+.news h4{
+  text-align: center;
+  color: blue;
+}
+
+.news ul li{
+  padding-bottom: 1em;
+  list-style: none;
 }
 /* this is the styles for the posted content */
 .postedcontent {
