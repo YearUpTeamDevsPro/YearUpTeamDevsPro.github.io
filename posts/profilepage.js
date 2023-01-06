@@ -1,66 +1,85 @@
 window.onload = function () {
-  onClickedlikesBtn();
-//  getusername()
+  
+  let noPost =document.getElementById("noPost")
+  noPost.style.display="none"
+   getusername()
+};
+function loginData() {
+  let loginData = getLoginData();
+  return loginData
+}
+let loginuser= loginData().username
+function getusername() {
+  const options = { 
+    method: "GET",
+    headers: { 
+      "Content-Type": "application/json",
+        "Authorization": `Bearer ${(loginData()).token}`,
+    },
 };
 
-function getusername() {
-  let loginuser = getLoginData().username;
-  let title = document.getElementById("title");
-  let contentArea = document.getElementById("contentArea");
-  let author = document.getElementById("author");
-  let timestamp = document.getElementById("timestamp");
-  fetch(api + "/api/post")
+  fetch(api + `/api/posts`,options)
     .then((res) => res.json())
-    .then((data) => {
-      for (let datas of data) {
-        if ((loginuser = datas.username)) {
-          title.innerhtml =
-            contentArea.innerhtml =
-            author.innerhtml =
-            timestamp.innerhtml =
-              data;
-        }
-      }
+    .then((data )=> {
+
+
+      
+      for (let output of data){
+      if (loginuser==output.username){
+
+            let postedcontentDiv= document.createElement("div")
+              let mainContentDiv= document.createElement("div")
+              let ContentAreaDiv = document.createElement("p")
+              let otherFeatures= document.createElement("div")
+              let authorp= document.createElement("p")
+              let timep= document.createElement("p")
+            
+              let timestamp = document.createElement("span")
+              let authorName = document.createElement("span")
+              let userid = output["._id"]
+              mainContentDiv.className="contentposted card-body"
+  
+              ContentAreaDiv.id=`contentArea ${userid}`
+              mainContentDiv.appendChild(ContentAreaDiv)
+              // this is for adding the authours and othera
+              let byauthors =document.createTextNode("By:")
+              authorp.append(byauthors)
+              authorName.id=`author ${ userid}`
+              authorp.appendChild(authorName)
+              let createdtime =document.createTextNode("Created:")
+              timep.append("createdtime")
+              timestamp.id=`timeStamp ${ userid}`
+              timep.appendChild(timestamp)
+              otherFeatures.className="otherp"
+              otherFeatures.appendChild(authorp)
+              otherFeatures.appendChild(timep)
+              
+              
+              mainContentDiv.appendChild(otherFeatures)
+              
+              postedcontentDiv.className="card postedcontent "
+              
+              // this isthe main parent appended 
+              postedcontentDiv.appendChild(mainContentDiv)
+              let maindiv =document.getElementById("maincontentarea")
+              maindiv.appendChild(postedcontentDiv)
+              let contentare=document.createTextNode(output.text)
+              ContentAreaDiv.append(contentare)
+              let timess=document.createTextNode(output.createdAt)
+              timestamp.append(timess)
+              let Name = document.createTextNode(output.username)
+              authorName.append(Name)
+  
+              let authorMain= document.getElementById("authorMain")
+              authorMain.innerHTML=output.username
+            }else {
+              
+              let noPost =document.getElementById("noPost")
+              noPost.style.display="block"
+            }
+            
+            
+          }
     });
 }
 
-function onClickedlikesBtn() {
-  const likedbtn = document.getElementById("likedbtn");
-  likedbtn.addEventListener("click", () => {
-
-
-    let likeOutput = document.getElementById("likeOutput");
- 
-    likeOutput.value = parseInt(likeOutput.value) + 1;
-    likeOutput = parseInt(likeOutput)  ;
-
-    // document.getElementById("likeOutput").value=parseInt(likeOutput)+1
-    console.log(likeOutput)
-
-  });
-  const dislikedbtn = document.getElementById("dislikedbtn");
-
-  dislikedbtn.addEventListener("click", () => {
-    let dislikeOutput = document.getElementById("dislikeOutput");
-    console.log()
-
-
-    dislikeOutput.value = parseInt(dislikeOutput.value) + 1;
-    
-  });
-
-  // const options={
-  //     method: 'POST',
-  //     body: JSON.stringify(data),
-  //     headers:{
-  //         "Content-Type": 'application/json'
-
-  //     }
-
-  // }
-  // fetch(api+"/api/likes",options)
-  // .then(res=>res.json())
-  // .then(likes=>{
-
-  // })
-}
