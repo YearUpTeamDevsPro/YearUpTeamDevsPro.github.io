@@ -6,14 +6,22 @@ const addPost = document.getElementById("addPost");
 const input1 = document.getElementById("input1");
 const textArea1 = document.getElementById("textArea1");
 const logoutBtn = document.getElementById("logoutBtn");
+const userName = document.getElementById("userName");
 
 
 
 
 window.onload = () =>{
+    let username = getLoginData().username;
+    console.log(username);
+
+    document.getElementById("userName").innerHTML = username;
+
+    userProfileName();
+
     isLoggedIn();
 
-    document.getElementById("userName").innerText = (isLoggedIn()).username;
+    // document.getElementById("userName").innerText = (isLoggedIn()).username;
 
     document.getElementById("addPost").style.display = "none";
 
@@ -60,4 +68,8 @@ addPost.onsubmit = (submit) =>{
         })
 
 
+}
+function userProfileName(){
+    let userName = document.getElementById("userName");
+    // userName.innerHTML = username;
 }
