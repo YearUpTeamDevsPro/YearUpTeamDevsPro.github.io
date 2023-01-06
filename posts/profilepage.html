@@ -11,13 +11,18 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" href="profilepage.css" />
+    <script src="/auth.js"></script>
+    <script>
+      if (isLoggedIn() === false) window.location.replace("../landing/");
+    </script>
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand">
         <div class="container-fluid">
-          <a class="navbar-brand" href="">Logo</a>
+          <a class="navbar-brand" href="index.html">Logo</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -32,7 +37,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto navEdit mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -42,7 +47,7 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropdown
+                  Profiles
                 </a>
                 <ul class="dropdown-menu">
                   <li>
@@ -66,110 +71,101 @@
     </header>
 
     <main>
-      <div class="miniprofile">
-        <img
-          class="benjaTheme"
-          src="images/benjamin-voros-wITd9_eDTw8-unsplash.jpg"
-          alt=""
-        />
+      
+        <div class="miniprofile">
+        
+            
+            <img
+              class="benjaTheme"
+              src="images/benjamin-voros-wITd9_eDTw8-unsplash.jpg"
+              alt=""
+            />
+            <div>
+              <img
+                class="miniProfile-Pic"
+                src="images/Screenshot 2020-09-17 081807 - Copy.jpg"
+                alt="profilepic"
+              />
+            </div>
+            <h2 id="authorMain">kehinde ojo</h2>
+            <p></p>
+            
+            <hr />
+            <button
+              type="button"
+              class="btn btn-primary editProfile"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Edit profile
+            </button>
+    
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Modal title
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div>
+    
+                      <label for="username">Username</label>
+                      <input id="username" type="text">
+                    </div>
+                    <div>
+    
+                      <label for="password">Password</label>
+                      <input id="password" type="text">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" id="saveChanges" class="savedEdit btn btn-primary">
+                      Save changes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+      
+      <div id="maincontentarea"class="maincontentarea">
         <div>
-          <img
-            class="miniProfile-Pic"
-            src="images/Screenshot 2020-09-17 081807 - Copy.jpg"
-            alt="profilepic"
-          />
-        </div>
-        <h2 id="author">kehinde ojo</h2>
-        <p></p>
-        <div class="PeopleCount">
-          <div>
-            <p>likes</p>
-            <p>5</p>
-          </div>
-          <div>
-            <p>posts</p>
-            <p>5</p>
-          </div>
-        </div>
-        <hr />
-        <button
-          type="button"
-          class="btn btn-primary editProfile"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-        >
-          Edit profile
-        </button>
 
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id="exampleModal"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">
-                  Modal title
-                </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">...</div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button type="button" class="savedEdit btn btn-primary">
-                  Save changes
-                </button>
-              </div>
-            </div>
+          <div class="contentheader">
+            <h5>Post made by you</h5>
           </div>
-        </div>
-      </div>
-      <div class="contentarea">
-        <div class="contentheader">
-          <h5>Post made by you</h5>
         </div>
 
-        <div class="card">
-          <div class="contentposted card-body">
-            <h1 id="title ">title</h1>
-            <p class="contentArea card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+        <div id="noPost" class=" card">
+          <div class=" card-body">
+            
+            <p id="contentArea"class="contentArea card-text">
+            there is no post made on your account
             </p>
-            <div class="otherp">
-              <p>By: <span id="author "></span></p>
-              <p>Created: <span id="timeStamp"></span></p>
-              <div class="likeDislike">
-                <div class="likes">
-                  <button id="likedbtn">
-                    <i class="fa-regular fa-thumbs-up"> </i>
-                  </button>
-
-                  <input id="likeOutput" type="number" value="0" name="" />
-                </div>
-                <div class="likes">
-                  <button id="dislikedbtn">
-                    <i class="fa-regular fa-thumbs-down"></i>
-                  </button>
-                  <input id="dislikeOutput" type="number" value="0" name="" />
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>

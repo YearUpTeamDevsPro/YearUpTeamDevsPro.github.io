@@ -15,19 +15,22 @@ function getAllpost() {
   const options = { 
     method: "GET",
     headers: { 
-       
-        Authorization: `Bearer ${loginuser.token}`,
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${loginuser.token}`,
     },
 };
   fetch("https://microbloglite.herokuapp.com/api/posts",options)
 
     .then((res) => res.json())
     .then((data) => {
+      
+            data.sort((x, y) => {
+                return x["createdAt"].localeCompare(y["createdAt"]) < 0 ? 1 : x.createdAt.localeCompare(y.createdAt) > 0 ? -1 : 0;
+            })
       for(let output of data){
 
-
+        
         createpost(output)
-
       }
     });
 }
@@ -104,7 +107,7 @@ function createpost(output){
   authorName.id=`author ${ userid}`
   authorp.appendChild(authorName)
   let createdtime =document.createTextNode("Created:")
-  timep.append("createdtime")
+  timep.append(createdtime)
   timestamp.id=`timeStamp ${ userid}`
   timep.appendChild(timestamp)
   otherFeatures.className="otherp"
@@ -126,6 +129,7 @@ function createpost(output){
   let contentare=document.createTextNode(output.text)
   ContentAreaDiv.append(contentare)
   let timess=document.createTextNode(output.createdAt)
+
   timestamp.append(timess)
   let Name = document.createTextNode(output.username)
   authorName.append(Name)
