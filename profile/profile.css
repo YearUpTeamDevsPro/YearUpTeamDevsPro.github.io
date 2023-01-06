@@ -8,7 +8,7 @@ body {
    
   
  }
- 
+
  
  body::before{
  
@@ -75,7 +75,7 @@ body {
  
  
  }
- 
+/*  
  nav ul {
    width: 100;
    text-align: right;
@@ -91,9 +91,9 @@ body {
  nav ul li a {
    color: rgb(246, 238, 238);
    text-decoration: none;
+  */
  
- 
- }
+ /* } */
  
  .sub-menu-wrap {
    position:relative;

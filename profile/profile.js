@@ -6,7 +6,10 @@ const addPost = document.getElementById("addPost");
 const input1 = document.getElementById("input1");
 const textArea1 = document.getElementById("textArea1");
 const logoutBtn = document.getElementById("logoutBtn");
-const userName = document.getElementById("userName");
+
+const PostOutput = document.getElementById("PostOutput");
+
+
 
 
 
@@ -21,7 +24,18 @@ window.onload = () =>{
 
     isLoggedIn();
 
-    // document.getElementById("userName").innerText = (isLoggedIn()).username;
+
+    function isLoggedIn() {
+        return {
+          username: 'DevsPro'
+        }
+      }
+      
+      let { username } = isLoggedIn();
+      document.getElementById("userName").innerText = username;
+      
+      
+
 
     document.getElementById("addPost").style.display = "none";
 
@@ -29,9 +43,6 @@ window.onload = () =>{
     document.getElementById("addPost").style.display = "block";
     }
 
-  
-
-        // let input1 = document.getElementById("input1").value;
  
 
         logoutBtn.onclick = () =>{
@@ -62,10 +73,23 @@ addPost.onsubmit = (submit) =>{
 
         })
         .then((response) => response.json())
-        .then((data) => {
+        .then((body) => {
+            let PostOutput = `<h3>Post</h3>`;
+            PostOutput += ` <ul>
+           
+            <li> ID: ${body._id}</li>
+            <li> Created At: ${body.createdAt.toLocaleString()}</li>
+            <li> Text: ${body.text}</li>
+            <li> User Name: ${body.username}</li>
+            
+            </ul>`;
 
-            console.log(data);
+
+             document.getElementById("PostOutput").innerHTML = PostOutput; 
+             console.log(body);
         })
+
+  
 
 
 }
