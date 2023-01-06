@@ -4,4 +4,4 @@ Don't forget to read the [*MicroblogLite* API docs](https://microbloglite.heroku
 
 Practice and experimentation provide experience, and experience provides confidence.
 
-Test the page: [Start Demo](https://yearupteamdevspro.github.io/landing/index.html/)
+Test the page: [Start Demo](https://yearupteamdevspro.github.io/landing/index.html)
